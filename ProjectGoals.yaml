@@ -1,0 +1,19 @@
+Goals:
+    1 build Blackstar Monopoly Game:
+        - Web App
+        - Mobile App
+        - Desktop App
+        - LAN server
+        - Blockchain server
+    2 build Blackstar Monopoly Community Platform:
+        - Account subsystem 
+        - GamePlay History Subsystem
+        - Leader board: [
+            casual, 
+            pro (paid accounts), 
+            all-stars (money bets)
+        ]
+        - Wiki Forum
+    3 build Blackstar Monopoly Club Network:
+        - Groups
+        - Clubs (physical contact/proximity)

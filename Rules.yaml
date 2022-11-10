@@ -187,8 +187,8 @@ Rules:
         [simple: 1 piece, pro: 3 pieces ($500 per additional piece)]
         corner places:
           jail (just visiting), free parking, (go to jail), Go (collect $200)
-          after corner-pieces, 
-            if (dice roll): [
+          after/crossing corner-pieces 
+            switch (dice roll): [
               <7 : no card,
               %2 == 0 : Fool Card,
               %3 == 0 : Error Card,
