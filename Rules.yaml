@@ -1,0 +1,216 @@
+Rules:
+  1. Players:
+    max: 4
+    pieces: 1
+    max_property: none
+  
+  2. Board:
+    properties: 
+      number: 4 lanes * 10 lots = 40 lots
+      characteristics: 
+        board sides:  [North: 3, West: 4, South: 2, East: 1] 
+        format: "ends: cheapness",
+        types: [real estate, utility, train station]
+      real estate properties:
+        buy: 
+          actions: [buy, bid, trade] 
+          meaning: acquire property
+        mortage: 
+          actions: [buy, finance] 
+          meaning: acquire cash
+        sell: 
+          actions: [trade, auction] 
+          meaning: exchange cash for property
+        redeem: pay cash to clear [mortgage, loan]
+        rent: [
+          charge players: max single house, 
+          host tennants:
+            acquire tennants (min 3 rounds),
+            accrue rent,
+            pay damages,
+            pay insurance,
+            lose tennants
+        ]        
+        build:
+          1. 1 title deed/lot (no "all colours"),
+          2. house: 
+            rooms: [single, double, tripple, quadruple, quintuple, sextuple]
+            format:
+              1. can turn into BnB guest house 
+                (x2 house build cost, x1.5 rent, players auto BnB),
+              2. players pay full rent (single room * room count),
+              3. charge to build, and tear down, (2 rounds),
+              4. tenant occupies full house (players don't pay) 
+              5. tenant pays half-rent,
+          3. apartment block:
+            floors: max 20,
+            format:
+              1. each new floor costs (m*n)/2, where:
+                n is house size, m is floors
+              2. can't build additional rooms after 1st floor,
+              3. can invest n turn apartment in block into BnB
+          NB:
+            1. Financing built properties, cuts on rent depending on loan taken,
+            2. Loan charge happens from salary directly (at Go),
+            3. Lot/House is x10 the ask price, rent figures is result of mortgages, - decrease mortgage increase rent,
+    tenants: 
+      normal:
+        spawn into game/city randomly,
+        pays half rent,
+        grows in size (fam members/rooms),
+        max size 5,
+        grows in size randomly every 2 rounds,
+        looks for cheapest rent for size (can switch landlords),
+        leaves game/city if no space (max room size < (size -1)),
+      temps:
+        1. visit BnB 'invisibly',
+        2. at Go, (dice roll * 10% * BnB rent) per BnB,
+  
+  3. Cards:
+    Fool:
+      Positive: [
+        1 pay off 1 liability,
+        2 bank error in your favour (get $100),
+        3 bank error in your favour (get $50),
+        4 bank error in your favour (get $25),
+        5 child gets scholarship (cost reduces $10),
+        6 invest in stock market? 
+          (random dice per quarter, optional $investment$)
+          (earnings = ((die 1)*-$investment$) + ((die 2)*$investment$))
+        7 Win any/all legal cases (lawyer's fees reimbursed)
+        8 Interest rates drop 2% on all loans (stacks),
+        9 Sell government bonds (1 @ $150)
+        10 Inherit government bonds (20, pay $500 taxes)
+      ]
+      Negative: [
+        1 get 1 child (liability $25, max 5),
+        2 tennant damages property,
+        3 city riot damages property (pay $5 per house),
+        4 don't collect $200 at Go [stacks, max 3 consecutive rounds],
+        5 sister's wedding (pay $100, loan financing -$10 at Go),
+        6 invest in stock market (lose $200),
+        7 Interest rates raise 1% on a loan (stacks),
+        8 Get sued by tennants for $300 (-$50 at Go, max 1)
+        9 Sell government bonds (1 @ $75)
+        10 Inherit government bonds (10, pay $500 taxes, pay $300 fees)
+      ]
+    Error:
+      Positive: [
+        1 bid 1 lot at half-price (hold till use),
+        2 damages covered 50% by Insurance (hold till use),
+        3 bank error in your favour (get $100),
+        4 bank error in your favour (get $50),
+        5 bank error in your favour (get $25),
+        6 Inherit $1000 (lawyer's fees $300, taxes $350)
+        7 Interest rates drop 3% on a loan (of choice, stacks),
+        8 Government bonds yield 5% (collect $50 per bond owned)
+        9 Property repossesed and put under receivership to pay loans,
+        10 Banker's club 
+          (give $500 to bank, get $30 @ Go, 
+          $10 from every loan taken after)
+      ]
+      Negative: [
+        1 tennant damages property,
+        2 lose 1 (random) building to fire,
+        3 don't collect $200 at Go [stacks, max 3 consecutive rounds],
+        4 brother falls sick (pay $500, loan financing -$50 at Go),
+        5 get sued (pay $500, no financing options),
+        6 lose a legal case,
+        7 Interest rates raise 1% on all loans,
+        8 Government bonds drop to 2% (pay $20 per bond owned),
+        9 Property repossesed an put back on open market 
+          (at 50% price, max 3),
+        10 Partnership ended
+          (receive $500 from bank, less $300 lawyer's fees, 
+          no more cashflow)
+      ]
+    Door:
+      Positive: [
+        1 $2k loan (collect $0 at Go till repay loan),
+        2 win lottery get $1000 
+          ( pay $500 taxes (finance taxes? -$25 at go)),
+        3 Investor wants BnB
+          (pays x1.5 house price (per house) for [building, land] )
+          (finance options (get): [$500 then $50 at Go, $100 at Go])
+          (finance till clear balance)
+          (house is put on open market for anyone to buy)
+        4 invest in stock market
+          options:  [
+            (lose $100 for 3 rounds, collect $30),
+            (pay $300 now, collect $30),
+            (loan $1000, less $100 at Go, get $10 per $100 invested)
+          ],
+        5 Sue restaurant for $500
+          (lawyer's fees $50 per round, stacks, max 3)
+        6 Buy Government bonds (1 @ $100),
+        7 Buy random players debt,
+        8 Finance a player's real estate (hold till use)
+          ($100 from player at Go)
+          (pay full construction cost)
+          (75% on rent collected)
+        9 Get out of jail free (hold till use),
+        10 Direct skip to Go (hold till use)
+      ]
+      Negative: [
+        1 Insurance premium rises $25
+          (damages reduced 10% per premium rise),
+        2 Market downturn (collect total rent less $25)
+          [stacks, max 3x reduction, beyond max carries over to next round(s)],
+        3 Investment Opportunity 
+          (if empty land, or 3 bedroom house/flat)
+          (acquire 3 bedroom BnB, no building cost, -$100 per round )
+        4 Investment Opportunity 
+          (if empty land, or 6 bedroom house/flat)
+          (acquire 6 bedroom BnB, no building cost, -$200 per round )
+        5 Get sued for $500
+          (lawyer's fees $50 per round, stacks, max 3 )
+          (1 additional slot per $1000 net worth 
+            - tall trees gather wind)
+        6 Sell government bonds (1 @ $50),
+        7 Loan offer ($1000, 0% deposit, 15% payment at Go)
+        8 Go to jail (hold till use),
+        9 Skipped next 2 rounds,
+        10 Direct skip to
+          (distance is  [simple: 2*(dice roll), pro: 2*(2 dice roll)]) 
+          (don't collect $200 at Go),
+      ]
+  
+  4. Gameplay:
+    1 Board:
+      structure:
+        4 lanes of [simple - 11 lots, pro - 22 lots] properties,
+        10 (*2 in pro) real estate, 
+        1(*2) utility: [
+          (4 * train station), space station, electric co.,
+          water co., gas co.
+        ]
+        [simple: 1 piece, pro: 3 pieces ($500 per additional piece)]
+        corner places:
+          jail (just visiting), free parking, (go to jail), Go (collect $200)
+          after corner-pieces, 
+            if (dice roll): [
+              <7 : no card,
+              %2 == 0 : Fool Card,
+              %3 == 0 : Error Card,
+              %6 == 0 : Door Card,
+              default: survive
+            ]
+            
+    2 Cards
+    3 Piece, Cards, Ledger, Balance Sheet, Log
+    4 lot -> house -> apartments
+    5 Conditions:
+      win: [
+        everyone on board owes you at least $200 (pro is $2000),
+        $5000 net worth (pro is $50_000),
+      ]
+      lose: [
+        opposite
+      ]
+    6 Banker:
+      min net worth requirement: $2000, (assets - liabilities)
+      rate: 12% (additional 1% per net worth )
+
+
+    
+    
