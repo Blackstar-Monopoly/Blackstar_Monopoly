@@ -198,7 +198,7 @@ benefits: (
 > House always takes his cut, House always wins
 
 
-B. Coins, Bits, And Credits:
+B. Coins, Bits, And Promos:
 - Coins
 ```
     - Blackstar Coins are in-game currency, 
@@ -226,7 +226,24 @@ B. Coins, Bits, And Credits:
     - Bits aren't Coins - unavailable as in-game,
     - Coins have 5% surcharge, Bits have 1% surcharge
 ```
-- Credits
+- Promos:
+```
+- limited edition game features: badges, cards, properties, boards,
+- are NFT's on the Solana blockchain attached to player account,
+- cards are available to all players in the same game during a game,
+```
+- Custom:
+```
+- public in-game market place, and support, to make custom features
+- players can make custom games (chance to join board pool),
+- players can make custom cards (chance to join main deck),
+- players can charge for boards, cards, features 
+    (that are then attached to the account as an NFT purchase signed)
+- house takes a cut (3%)
+```
+
 ## Games
+
+
 
 
