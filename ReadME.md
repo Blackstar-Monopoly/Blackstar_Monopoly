@@ -232,15 +232,17 @@ B. Coins, Bits, And Promos:
 - are NFT's on the Solana blockchain attached to player account,
 - cards are available to all players in the same game during a game,
 ```
-- Custom:
+
+C. Custom:
+The game will include a public in-game marketplace, and support, to make custom features
 ```
-- public in-game market place, and support, to make custom features
 - players can make custom games (chance to join board pool),
 - players can make custom cards (chance to join main deck),
 - players can charge for boards, cards, features 
     (that are then attached to the account as an NFT purchase signed)
 - house takes a cut (3%)
 ```
+Public API will be provide for bots or clients, but charges will be included on a subscription basis depending on the volume of requests. (starting from >100 requests a month).
 
 ## Games
 
