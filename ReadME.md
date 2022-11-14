@@ -147,9 +147,86 @@ For several reasons:
 ```
 
 ## Monetization:
-1. Pleb, Patron, and Pro accounts:
-    - 
+A. Pleb, Patron, and Pro accounts:
+- Pleb accounts are basic accounts,
+```
+ basic account,
+ no cash transactions necessary, 
+ can participate in games for tokens, 
+ one time verification fee for OAuth functionality, 
+ can participate in Wiki on verification, 
+ Archon mode: 2+ players acting as one piece, 
+ public leader board
+```
+- Patron accounts are cash transaction accounts, 
+```
+ affording larger games 
+ (
+    streets: 4-square, 6-hexagon, 8-octagon, 12-duodecagon, 16-sextadecagon; 
+    dice: 2,3,5; 
+    pieces: 2,3 [12+ allow:4,5]; 
+    Wein Cards - beta versions of F/T/D cards
+ ), 
+ betting on games, 
+ spectating games live, 
+ sponsoring pros, 
+ public and patron leader board, 
+ -> can patronise specific pros, 
+ -> can form investment clubs (1 year verified patron)
+```
 
+- Pro accounts are leaderboard contenders, 
+```
+requirements are: (
+    sponsorship, 
+    ranking in the 10th percentile at least once, 
+    verified account, 
+    available for acting as ambassadors, 
+    regular - weekly - gameplay and coaching
+ ) 
+-> Blackstar Monopoly is a social game, 
+and a learning aid, 
+therefore heroes of our community are beholden to evangelise 
+and share the knowledge in return for our support 
+benefits: (
+    sponsorship, 
+    cut in bets (win: 80% or lose: share 15%), 
+    tournaments (and prize pool), 
+    more challenging games (random card sets)
+)
+```
+> House always takes his cut, House always wins
+
+
+B. Coins, Bits, And Credits:
+- Coins
+```
+    - Blackstar Coins are in-game currency, 
+    - in Patron-only games, 
+    players can buy coins with real world cash 
+    (limit 500 coins, only added at Go ),
+    - Patrons can buy coins for others 
+    (pre-game, max 500 coins), 
+    or to create a prize pool (in-game)
+    (pool split 50-45-5: 
+        50 to winner, 
+        45 shared by rem, 
+        5 to house
+    )
+
+```
+- Bits
+```
+    - Bits are a twitch thing you give to the streamer
+    - Blackstar Monopoly Bits are cash bits 
+    you give to players you like as you spectate
+    their game
+    - Blackstar Monopoly Bits are only available in live games, 
+    and you can bit players in your own game 
+    - Bits aren't Coins - unavailable as in-game,
+    - Coins have 5% surcharge, Bits have 1% surcharge
+```
+- Credits
 ## Games
 
 
