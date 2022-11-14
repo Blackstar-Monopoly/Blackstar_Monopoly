@@ -147,7 +147,7 @@ For several reasons:
 ```
 
 ## Monetization:
-A. Pleb, Patron, and Pro accounts:
+### A. Pleb, Patron, and Pro accounts:
 - Pleb accounts are basic accounts,
 ```
  basic account,
@@ -197,8 +197,7 @@ benefits: (
 ```
 > House always takes his cut, House always wins
 
-
-B. Coins, Bits, And Promos:
+### B. Coins, Bits, And Promos:
 - Coins
 ```
     - Blackstar Coins are in-game currency, 
@@ -233,7 +232,7 @@ B. Coins, Bits, And Promos:
 - cards are available to all players in the same game during a game,
 ```
 
-C. Custom:
+### C. Custom:
 The game will include a public in-game marketplace, and support, to make custom features
 ```
 - players can make custom games (chance to join board pool),
@@ -242,8 +241,21 @@ The game will include a public in-game marketplace, and support, to make custom 
     (that are then attached to the account as an NFT purchase signed)
 - house takes a cut (3%)
 ```
+### D. Bots and API :
 Public API will be provide for bots or clients, but charges will be included on a subscription basis depending on the volume of requests. (starting from >100 requests a month).
+```
+- Bots are allowed to participate in groups/wiki (as long as self-identify as a bot), and can get a pseudo-account with pseudo-verification.
+- Bots are allowed to play games, but only in custom mode where players subscribe to play with bots.
+- Bots can play with other bots, and a bot leader board can/will exist.
+- Human v Bot leader board
+```
 
+### NOTE:
+The **house** is: 
+* the devs who contribute to the game (paid on per commit basis)
+* The Blackstar Company (physical resources to provide the game)
+* Everyone who participates in the Blackstar Monopoly community
+> Some things are more valuable than money: knowledge, joy, and freedom
 ## Games
 
 
