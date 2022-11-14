@@ -252,7 +252,7 @@ Public API will be provide for bots or clients, but charges will be included on 
 
 ### NOTE:
 The **house** is: 
-* the devs who contribute to the game (paid on per commit basis)
+* the devs who contribute to the game (paid on per commit basis: percentage contribution is percentage ownership is percentage earnings)
 * The Blackstar Company (physical resources to provide the game)
 * Everyone who participates in the Blackstar Monopoly community
 > Some things are more valuable than money: knowledge, joy, and freedom
