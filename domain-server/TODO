@@ -1,0 +1,3 @@
+1 Build a server to:
+    answer get requests for comments,
+    store player data (geography, cookiesm OAuth, history)
