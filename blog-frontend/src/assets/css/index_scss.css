@@ -1,0 +1,14 @@
+@import "./import_tailwind.css";
+body {
+  background-color: black;
+  color: white;
+}
+
+nav {
+  background-color: white;
+  color: black;
+  display: flexbox;
+  flex-direction: row;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22index.scss%22,%22subcomponents/pri_.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAQ;ACAR;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA%22,%22file%22:%22index_scss.css%22%7D */

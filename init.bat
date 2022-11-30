@@ -58,6 +58,8 @@ npm init -y
 cd ../..
 touch backend/transactions-api-service/Dockerfile
 
-mkdir dev/certs dev/log dev/docker
+mkdir dev/certs
+mkdir dev/log 
+mkdir dev/docker
 
 touch docker-compose.yaml
