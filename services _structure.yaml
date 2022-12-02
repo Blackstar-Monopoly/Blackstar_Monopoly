@@ -1,0 +1,40 @@
+## This is the site operational structure
+
+Goal:
+1. serve Blackstar Monopoly games to clients
+2. connect people through:
+  - multiplayer monopoly games
+  - social blogging platform
+
+Services:
+  Frontend:
+  ## 1 week per page (including backend service support development)
+    - accounts
+      - Accounts [C,R,U,D, friends [C,R,U,D ]]
+      - games history [C,R,U,D]
+      - OAuth [C,R,U,D]
+      - groups [C,R,U,D, management [C,R,U,D]], chats [C,R,U,D]
+    - games
+      - (board, assets, app) static server
+      - game session event log [C,R,U,D]
+      - multiplayer (lobby, chat, message broker) [C,R,U,D]
+    - blogging
+      - Posts, Interactions [C,R,U,D]
+      - Posts death date
+      - search engine:
+        - posts/comments algorithm (key word search/query)
+        - feed customisation (key word search/query)
+          -> customise feeds
+        - search index/caching
+        - natural language ml -> suggestions
+
+  Backend:
+  ## 3 days per service (3 days * 8 = 24 days ~ 25days)
+    - accounts
+    - bot api
+    - database
+    - event orchestrator
+    - frontend gateway
+    - proxy service
+    - search service
+    - transactions api

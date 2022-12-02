@@ -17,6 +17,7 @@ touch game-frontend/Dockerfile
 touch blog-frontend/Dockerfile
 touch account-frontend/Dockerfile
 
+
 mkdir backend/search-service
 cd  backend/search-service
 npm init -y
@@ -58,8 +59,63 @@ npm init -y
 cd ../..
 touch backend/transactions-api-service/Dockerfile
 
+mkdir backend/bot-api-service
+cd backend/bot-api-service
+npm init -y
+cd ../..
+touch backend/bot-api-service/Dockerfile
+
 mkdir dev/certs
 mkdir dev/log 
 mkdir dev/docker
 
 touch docker-compose.yaml
+
+
+//--//
+
+
+cd  backend/search-service
+npm install --save --legacy-peer-deps
+cd ../..
+
+
+cd  backend/accounts-service
+npm install --save --legacy-peer-deps
+cd ../..
+
+
+cd backend/multiplayer-coordination-service 
+npm install --save --legacy-peer-deps
+cd ../..
+
+
+cd backend/database-service
+npm install --save --legacy-peer-deps
+cd ../..
+
+
+cd backend/event-orchestrator-service
+npm install --save --legacy-peer-deps
+cd ../..
+
+
+cd backend/front-api-service
+npm install --save --legacy-peer-deps
+cd ../..
+
+
+cd backend/proxy-service
+npm install --save --legacy-peer-deps
+cd ../..
+
+
+cd backend/transactions-api-service
+npm install --save --legacy-peer-deps
+cd ../..
+
+
+
+cd backend/bot-api-service
+npm install --save --legacy-peer-deps
+cd ../..

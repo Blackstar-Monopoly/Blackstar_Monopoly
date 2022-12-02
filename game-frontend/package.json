@@ -2,6 +2,8 @@
   "name": "game-frontend",
   "version": "0.1.0",
   "private": true,
+  "author": "Judah O Matende",
+  "license": "MPL-2.0",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-regular-svg-icons": "^6.2.1",
@@ -21,9 +23,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "dev": "dev.bat",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "kill": "taskkill /im sass.exe /im cmd.exe /im node.exe /f"
   },
   "eslintConfig": {
     "extends": [
