@@ -1,0 +1,21 @@
+## TCP protocol for Dev
+## Implement TLS for Production
+
+1. Dockerize:
+  - Proxy : 
+    - Fastify server
+    - event-logger
+    - message-broker
+    - error-handler
+    - server-side caching
+  - MongoDB 1 : 
+    - Message Queue
+    - Data-transfer Queue
+    - Media Server
+  - MongoDB 2 : 
+    - Services Mini-DBs
+    - Query Cache
+    - Main Thread
+  - PostgreSQL: 
+    - long-term storage
+    - Query

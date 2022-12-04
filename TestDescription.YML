@@ -1,0 +1,34 @@
+
+Services:
+1. Authentication:
+  - Sign Up
+  - Sign in
+  - Authorisation
+2. Social Interaction:
+  - Profile [About, Friends, Groups, Blog (Cached Main Thread Search)]
+  - Friends [About, Friends, Groups, Blog (Cached Main Thread Search)]
+  - Groups [About, Mmebers, Blog (Cached Main Thread Search), Passphrase (Private)]
+3. Managemnet:
+  - Privacy, Communications, Connected platforms
+  - Feed(s), Media Lifetime, BLocked list
+  - API Keys [video (source links, streaming links), bot connection]
+4. Server Administration:
+  - Server List and Roles
+  - Server CRUD:
+   - Admins, Mods, Members [C,R,U,D]
+5. Payment Subsystem:
+  - Payment creds [C,R,U,D]
+    [more than one](mobile money?, visa/mastercard/paypal?, bank transfer?)
+  - Verification:
+    - personal info (legal, or associated account (verification by org))
+    - paid/processing state (1~3 business days)
+    [processing: confirm identity, charge account, update account info]
+  - Payment processing:
+    - direct-processing: 
+      [charge account user, update business ledger, update account ledger, reset counter]
+    - update account details: [
+      NFTS:[skins, deck, boards, replays, 
+        tickets:[player, observer, betting]]]
+    - change user profile: [badges, update subscribers]
+
+

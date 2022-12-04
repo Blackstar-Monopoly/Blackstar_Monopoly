@@ -1,0 +1,26 @@
+1. Navbar:
+  [Logo|[dropdown], Search box, Links (game, discord, accounts|[dropdown])]
+  - Desktop interface
+  - Mobile interface
+
+2. Sign Up:
+  - Multi-step form:
+    1: [Name (upload contact), Username, Email, Password, Confirm Password, 
+        OAuth: Google, Facebook, Battle.net?, WhatsApp?]
+    2: Verify:
+      - confirm email
+      - confirm phone number
+      - apply physical/legal user verify:
+      - later: [  
+        - Payment details
+        - charge user
+        - human reviewer queue  ]
+    3:  Add other accounts:
+      - add other social media
+      - import friends/followers/contacts (publish/connect to other social media)
+        [Google, Facebook, Twitter, Reddit, Discord]
+    4. Customise:
+      - Community: [follow: [accounts, topics], join: [servers, wiki]]
+      - Feed: [choose: topics, filters, orgs]
+      - Games: [game versions-types, tutorials, lobby filters, shop (skins)]
+

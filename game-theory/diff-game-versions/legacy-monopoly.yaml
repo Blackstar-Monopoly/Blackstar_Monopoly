@@ -1,11 +1,27 @@
 Base Game:
   Gameplay:
     Early Game:
+      - acquire properties
+      - metagame 1:acquire properties cheaply
+      - metagame 2:bid-war opponents
     Mid Game:
+      - acquire monopoly [alll same colour]
+      - metagame 1:prevent monopolies
+      - metagame 2:acquire properties cheaply
     Late Game:
+      - build houses -> hotel (focus on one chain at a time)
+      - metagame 1:break monopolies by bankrupting (force others to mortgage)
+      - metagame 2:keep other players in the game by buying their properties
   Setup:
     Board:
+      - standard board
     Rules:
+      - standard rules
     Cards:
+      - standard Community chest
 
 Variations:
+  - no need for monopolies to build
+  - negotiable loan terms
+  - auction property (instead of trade with single partner)
+

@@ -1,0 +1,98 @@
+version: "3.8"
+name: Blackstar-Monopoly
+
+services:
+  # proxy:
+  #   image: node:16-buster-slim
+  #   name: system-proxy-service
+  #   dockerfile: ./backend/proxy-service/Dockerfile
+  #   ports:
+  #     - "443:8043"
+  #   networks:
+  #     - front-tier
+  #     - back-tier
+  #   volumes:
+  #     - ./backend/proxy-service/data:/
+  #   depends_on:
+  #     - db-service
+
+  # db-service:
+  #   image: node:16-buster-slim
+  #   name: db-manager-service
+  #   volumes:
+  #     - ./backend/database-service/data/app:/
+  #   dockerfile: ./backend/database/Dockerfile
+  #   ports: -"8080:8080"
+  #   networks:
+  #     - back-tier
+  #   depends_on:
+  #     - mongo-db-1
+  #     - mongo-db-2
+  #     - postgres-db
+
+  mongo-db-1:
+    image: mongo:6.0.3
+    volumes:
+      - ./backend/database-service/data/mongodb_broker:/data/db
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: db_001
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports: ["2010:27107"]
+    networks:
+      back-tier:
+        ipv4_address: 172.25.0.15
+
+  mongo-db-2:
+    image: mongo:6.0.3
+    volumes:
+      - ./backend/database-service/data/mongodb_store:/data/db
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: db_002
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports: ["2020:27107"]
+    networks:
+      back-tier:
+        ipv4_address: 172.25.0.10
+
+  postgres-db:
+    image: postgres
+    volumes:
+      - ./backend/database-service/data/postgres_store:/data/db
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      # POSTGRES_DB: Structured_Store
+      POSTGRES_PASSWORD: admin
+    ports: ["2030:5432"]
+    networks:
+      back-tier:
+        ipv4_address: 172.25.0.5
+
+volumes:
+  db-data:
+    driver: flocker
+    driver_opts:
+      size: "10GiB"
+
+# configs:
+#   httpd-config:
+#     external: true
+
+# secrets:
+#   server-certificate:
+#     external: true
+
+networks:
+  # The presence of these objects is sufficient to define them
+  front-tier:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.25.1.0/24
+  back-tier:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.25.0.0/24
