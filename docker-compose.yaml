@@ -38,11 +38,10 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: db_001
       MONGO_INITDB_ROOT_PASSWORD: password
-    ports: ["2010:27107"]
-    networks:
-      back-tier:
-        ipv4_address: 172.25.0.15
-
+    ports: ["2010:27017"]
+    # networks:
+    #   back-tier:
+    #     ipv4_address: 172.25.0.15
   mongo-db-2:
     image: mongo:6.0.3
     volumes:
@@ -51,10 +50,10 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: db_002
       MONGO_INITDB_ROOT_PASSWORD: password
-    ports: ["2020:27107"]
-    networks:
-      back-tier:
-        ipv4_address: 172.25.0.10
+    ports: ["2020:27017"]
+  #     # networks:
+  #     #   back-tier:
+  #     #     ipv4_address: 172.25.0.10
 
   postgres-db:
     image: postgres
@@ -66,33 +65,32 @@ services:
       # POSTGRES_DB: Structured_Store
       POSTGRES_PASSWORD: admin
     ports: ["2030:5432"]
-    networks:
-      back-tier:
-        ipv4_address: 172.25.0.5
+#     # networks:
+#     #   back-tier:
+#     #     ipv4_address: 172.25.0.5
 
-volumes:
-  db-data:
-    driver: flocker
-    driver_opts:
-      size: "10GiB"
+# volumes:
+#   db-data:
+#     driver: flocker
+#     driver_opts:
+#       size: "10GiB"
+# # configs:
+# #   httpd-config:
+# #     external: true
 
-# configs:
-#   httpd-config:
-#     external: true
+# # secrets:
+# #   server-certificate:
+# #     external: true
 
-# secrets:
-#   server-certificate:
-#     external: true
-
-networks:
-  # The presence of these objects is sufficient to define them
-  front-tier:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.25.1.0/24
-  back-tier:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.25.0.0/24
+# # networks:
+# #   # The presence of these objects is sufficient to define them
+# #   front-tier:
+# #     driver: bridge
+# #     ipam:
+# #       config:
+# #         - subnet: 172.25.1.0/24
+# #   back-tier:
+# #     driver: bridge
+# #     ipam:
+# #       config:
+# #         - subnet: 172.25.0.0/24

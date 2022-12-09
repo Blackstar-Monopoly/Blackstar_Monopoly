@@ -11,26 +11,56 @@ const mongo_db_2 = `mongodb://db_002:password@127.0.0.1:2020`;
 const postgres_db = `postgres://root:admin@127.0.0.1:2030/Structured_Store`;
 
 const mongodb = require("mongodb");
-mongodb.MongoClient.connect(mongo_db_1, {
-  connectTimeoutMS: 20000,
-  directConnection: true,
-})
-  .then(() => console.log("MongoDB 1 connected"))
-  .then((client) => {
-    // const fastify = require("fastify")();
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
-    fastify.register(require("@fastify/mongodb"), { client: client });
-    // .register(function (fastify, opts, next) {
-    //   const db = fastify.mongo.client.db("mydb");
-    //   ...
-    //   ...
-    //   ...
-    //   next();
-    // });
-  })
-  .catch((err) => {
-    throw err;
-  });
+const connect_mongo = async (
+  uriString = "mongodb://localhost:27017",
+  dbName = "Mongo1"
+) => {
+  for (let tries = 0; tries < 4; tries++) {
+    try {
+      return await mongodb.MongoClient.connect(uriString, {
+        connectTimeoutMS: 20000,
+        directConnection: true,
+      }).then((client) => {
+        console.log(`${dbName} connected`);
+        return {
+          client: client,
+          name: dbName,
+        };
+      });
+    } catch (err) {
+      if (tries < 3) {
+        console.log(err.message, " tries: ", tries + 1);
+        await sleep(5000);
+        continue;
+      }
+      throw new Error(err.message);
+    }
+  }
+  throw new Error(`${dbName} didn't connect`);
+};
+
+async function ConnectMongo() {
+  const db_001 = await connect_mongo(mongo_db_1, "mongo_broker");
+  fastify.register(require("@fastify/mongodb"), db_001);
+
+  const db_002 = await connect_mongo(mongo_db_2, "mongo_store");
+  fastify.register(require("@fastify/mongodb"), db_002);
+
+  try {
+    fastify.register(require("@fastify/postgres"), {
+      connectionString: postgres_db,
+    });
+    console.log("Postgresql DB connected");
+  } catch (errr) {
+    console.log(errr.message);
+  }
+
+  return fastify;
+}
 
 // fastify.register(require("@fastify/postgres"), {
 //   connectionString: postgres_db,
@@ -49,4 +79,4 @@ function PostgresQuery(func_body = (client) => {}) {
   };
 }
 
-module.exports = fastify;
+module.exports = { ConnectMongo };
