@@ -3,7 +3,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Outlet, Link } from "react-router-dom";
-import { Account, Home, Blog, Contact, NoPage } from "./tsx/pages";
+import { Home, Game, Blog, NoPage, Account } from "./tsx/pages";
 
 type LayoutProps = {
   Links: string[];
@@ -22,7 +22,7 @@ const Layout = (props: LayoutProps) => {
     <>
       <nav className="flex flex-row">
         <div className=" flex items-center justify-center p-2">
-          <i className="fa-solid fa-bars p-2"></i>
+          <i className="fa-solid fa-bars px-2"></i>
 
           <h1>Blackstar Monopoly</h1>
         </div>
@@ -40,11 +40,11 @@ export default function App() {
       <Routes>
         <Route
           path="/"
-          element={<Layout Links={["Home", "Blogs", "Contact", "Account"]} />}
+          element={<Layout Links={["Home", "Blog", "Game", "Account"]} />}
         >
           <Route index element={<Home />} />
           <Route path="Blogs" element={<Blog />} />
-          <Route path="Contact" element={<Contact />} />
+          <Route path="Game" element={<Game />} />
           <Route path="Account" element={<Account />} />
           <Route path="*" element={<NoPage />} />
         </Route>

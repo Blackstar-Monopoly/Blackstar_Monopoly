@@ -1,0 +1,17 @@
+#signinform {
+  border-radius: 5px;
+
+  .inputdiv {
+    display: flex;
+
+    label {
+      width: 6rem;
+    }
+
+    input {
+      margin: 2px 1rem;
+      border-radius: 2px;
+      padding: 2px 4px;
+    }
+  }
+}

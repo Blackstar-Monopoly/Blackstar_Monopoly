@@ -11,4 +11,19 @@ nav {
   flex-direction: row;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22index.scss%22,%22subcomponents/pri_.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAQ;ACAR;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA%22,%22file%22:%22index_scss.css%22%7D */
+#signinform {
+  border-radius: 5px;
+}
+#signinform .inputdiv {
+  display: flex;
+}
+#signinform .inputdiv label {
+  width: 6rem;
+}
+#signinform .inputdiv input {
+  margin: 2px 1rem;
+  border-radius: 2px;
+  padding: 2px 4px;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22index.scss%22,%22subcomponents/_pri.scss%22,%22subcomponents/_home.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAQ;ACAR;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;;;ACTF;EACE;;AAEA;EACE;;AAEA;EACE;;AAGF;EACE;EACA;EACA%22,%22file%22:%22index_scss.css%22%7D */
