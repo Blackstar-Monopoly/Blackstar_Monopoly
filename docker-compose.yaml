@@ -50,10 +50,11 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: db_002
       MONGO_INITDB_ROOT_PASSWORD: password
-    ports: ["2020:27017"]
-  #     # networks:
-  #     #   back-tier:
-  #     #     ipv4_address: 172.25.0.10
+    ports:
+      ["2020:27017"]
+      # networks:
+      #   back-tier:
+      #     ipv4_address: 172.25.0.10
 
   postgres-db:
     image: postgres
@@ -62,13 +63,12 @@ services:
     restart: always
     environment:
       POSTGRES_USER: root
-      # POSTGRES_DB: Structured_Store
+      POSTGRES_DB: Structured_Store
       POSTGRES_PASSWORD: admin
     ports: ["2030:5432"]
-#     # networks:
-#     #   back-tier:
-#     #     ipv4_address: 172.25.0.5
-
+    # networks:
+    #   back-tier:
+    #     ipv4_address: 172.25.0.5
 # volumes:
 #   db-data:
 #     driver: flocker

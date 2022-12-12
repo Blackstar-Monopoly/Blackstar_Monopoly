@@ -1,0 +1,11 @@
+0. Super-Admin:
+  - event-log
+  - catch-respond errors
+
+1. [C,R,U,D] Account:
+  - read->sanitize->check POST request
+  - update Database:
+    - create account [account session]
+    - create Token/Session
+  - 
+
