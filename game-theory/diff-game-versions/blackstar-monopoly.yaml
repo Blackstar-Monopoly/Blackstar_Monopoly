@@ -1,0 +1,65 @@
+invoke: legacy-monopoly
+
+Blackstar-Monopoly Game:
+  Gameplay:
+    Early Game:
+      - acquire plots
+      - build houses
+      - acquire renters
+    Mid Game:
+      - use loans to advance properties
+        - build apartments
+        - build BnB's
+      - use cards to get advantages
+      - use stocks to get cash
+    Late Game:
+      - securitise and resell properties
+      - Loan other players
+  Setup:
+    Board:
+      - standard board 
+        - with no card plots
+        - securitizable
+          [utilities, individual plots]
+      - [ dice, piece ] 2+
+        - 2 dice standard
+        - can buy 1 extra dice
+        - can buy 1 extra piece
+      - ~10 random renters every round 
+        [ rent collected at rate at 'Go',
+          rate: 
+            ('no. of renters' * 2 * '6 dice roll' * '10% card rent'), ]
+    Rules:
+      - own 3 plots to start building
+      - every corner cross
+        - random draw of card
+        [ "%6 nothing",
+          "%2 Fool",
+          "%3 Error",
+          "else Door" ]
+      - [Loans, H.P.P]
+        - can pay expenses over time
+        - can buy|build on loans 
+          [min 10% interest rate, 1% per extra loan]
+        - loan|HPP fees charged at 'GO'
+      - Margin calls
+        - at Jail
+        - at bankruptcy
+        - mortgage|sell|action properties to cover loans
+          - can't sell buildings (lose) but has to sell entire plot+buildings
+          - can mortgage|finance individual buildings|houses
+    Cards:
+      - special cards
+        [ Fool: bad luck, 
+          Error: good luck, 
+          Door: mixed luck, ]
+ 
+Variations:
+  - 'children':
+    - special fool card 
+      [get married, get kids (max 5), wedding, birthdays ]
+    - pays rent but can't buy property 
+      (auto action)
+  - 'Door' deals:
+    - big and small deal option
+

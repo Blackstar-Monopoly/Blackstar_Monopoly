@@ -1,0 +1,41 @@
+invoke: blackstar-monopoly
+
+Checkers-Monopoly Game:
+  Gameplay:
+    Early Game:  
+      - acquire properties    
+    Mid Game:
+      - use shares and bonds to accelerate growth
+    Late Game:
+      - buy shares|bonds to get cashflow
+  Setup:
+    Board:
+      - [10,10] inner board (of plots/businesses)
+        - inner board accessible at train stations
+          1: if land at train station
+          2: roll double n exit
+          3: else move to spot/plot [m,n]
+      - Market
+        - can post assets to market (for other players to buy)
+        - can bid on assets in market
+    Rules:
+      - Bond options
+        - reach 1000 Cr Balance
+        - lump properties worth N*1k into a bond item
+          - price range 10~100 Cr @ %10 units
+          - can use the cash to build
+        - pay percentage (of Bond) at Go
+          [rates: 1% @ Go%1, 3% @ Go%3, 5% @ Go%5] * [rounds: 10,20,30 ]
+          - ie, after N rounds pay back full cash
+
+      - Stocks|Shares
+        - lump cards of same colour together
+        - sell specific % as shares 
+        - pay dividends at Go
+    Cards:
+     
+Variations:
+  - 'Goals':
+    - special cards drawn/picked at 'Go'
+    - win condition is meeting|buying the 'Goal'
+

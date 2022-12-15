@@ -26,7 +26,10 @@ const Layout = (props: LayoutProps) => {
 
           <h1>Blackstar Monopoly</h1>
         </div>
-        <ul className="flex flex-row right-0">{Links.map(l)}</ul>
+
+        <div className="relative">
+          <ul className="flex flex-row ">{Links.map(l)}</ul>
+        </div>
       </nav>
 
       <Outlet />

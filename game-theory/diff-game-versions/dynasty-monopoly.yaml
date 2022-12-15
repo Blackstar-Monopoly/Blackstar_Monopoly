@@ -1,0 +1,63 @@
+invoke: checkers-monopoly
+
+Dynasty-Monopoly Game:
+  Gameplay:
+    Early Game:  
+      - get kids
+      - get property
+    Mid Game:
+      - patiently grow family
+    Late Game:
+  Setup:
+    Board:
+      - get kids
+        - random Door|Fool card
+          [max: 5, names: random or choose, 
+          adult: can get kids, ]
+        - kids take 5~10 loops to grow
+          - stage 1 >> infant
+          - stage 2 >> teenage
+          [can drop out]
+          - stage 3 >> college|adult
+          [can drop out]
+        - kids have  ledger
+          - controlled by bot
+          - take allowance when young (per round)
+          - pay remittance when adult
+      - [kids, adults, player] can die
+        - if player dies 
+          - kids inherit 100% wealth
+          - can choose kid to continue game
+        - if kid dies
+          - player pays funeral/insurance
+          - kid's kids inherit wealth
+      - player ends when no kids left
+    
+      - player ledger includes
+        ["dynasty net worth","dynasty net balance"]
+          - player sees all family ledgers
+          - player ledger includes assets of all family members
+            - colour coded by owner
+            - can't directly buy/sell
+    Rules:
+      - can gift kids 
+        - buy property on their behalf
+        [gift cash, assets, deals]
+        - kids|parents get first dibs on deals?/actions?
+          - internal family auction before external auction
+      - kids roll/play after player ends round (before next player)
+        - all in rapid succession (order of seniority)
+        - super-rapid (auto-trade/bot)
+        - teens|adults can buy|trade assets
+    Cards:
+      - at 3~5 kids
+        - can keep card (and trade)
+        - can gift card to adult kids
+        - can pay 450 + (50 * N) Cr to go beyond 5 kids
+          N: no. of kids above 5
+      
+Variations:
+  - 'Win condition':
+    - first to Cr 100_000
+    - most cash when 1 dynasty dies
+    - 3 dynasties > Cr 50_000

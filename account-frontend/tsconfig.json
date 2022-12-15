@@ -37,6 +37,7 @@
     "node_modules",
     "build",
     "**/*.spec.ts",
-    "src/tsx/app.js"
+    "src/tsx/app.js",
+    "**/fontawesome-free-6.2.1-web"
   ]
 }
