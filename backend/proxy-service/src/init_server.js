@@ -1,5 +1,6 @@
 // Require the framework and instantiate it
-const fastify = require("fastify")({ logger: true });
+// const fastly = require("fastify")({ logger: true });
+var fastify = require("./routes/auth_service_routes")();
 
 const EnvVars = process.env;
 const dev_env =

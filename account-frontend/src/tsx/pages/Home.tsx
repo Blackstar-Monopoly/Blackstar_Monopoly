@@ -25,13 +25,13 @@ function SignIn(props: any) {
 
   async function handleSubmit() {
     const state = {
-      form: "sign in",
+      form: "sign_in",
       _name: _name.val(),
       _password: _password.val(),
     };
 
     /*
- const options = {
+    const options = {
       method: method,
       headers:{'content-type': 'application/json'},
       mode: 'no-cors'
@@ -40,12 +40,11 @@ function SignIn(props: any) {
     options.body = JSON.stringify(body);
 
     return fetch(url, options);
-*/
+    */
 
-    await fetch("/account/", {
+    await fetch("/accounts/", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      mode: "no-cors",
       body: JSON.stringify(state),
     })
       .then((response) => {
@@ -56,7 +55,7 @@ function SignIn(props: any) {
 
   return (
     <>
-      <div className="flex w-full items-center justify-center">
+      <div id="signinmodal" className="flex w-full items-center justify-center">
         <form
           ref={_signin_form}
           id="signinform"

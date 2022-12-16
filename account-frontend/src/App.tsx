@@ -11,9 +11,9 @@ type LayoutProps = {
 
 const Layout = (props: LayoutProps) => {
   const { Links } = props;
-  const l = (txt: string) => {
+  const l = (txt: string, i: number) => {
     return (
-      <li className="p-2 mx-3">
+      <li key={`link_${i}`} className="p-2 mx-3">
         <Link to={`/${txt === "Home" ? "" : txt}`}>{`${txt}`}</Link>
       </li>
     );
@@ -27,8 +27,8 @@ const Layout = (props: LayoutProps) => {
           <h1>Blackstar Monopoly</h1>
         </div>
 
-        <div className="relative">
-          <ul className="flex flex-row ">{Links.map(l)}</ul>
+        <div className="relative ">
+          <ul className="flex justify-end flex-row ">{Links.map(l)}</ul>
         </div>
       </nav>
 
