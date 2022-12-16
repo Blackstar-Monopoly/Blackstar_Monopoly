@@ -18,7 +18,7 @@ ConnectMongo().then((fastify) => {
   });
 
   fastify.listen(
-    { host: dev_env ? "127.25.0.2" : undefined, port: EnvVars.PORT },
+    { host: dev_env ? "127.25.0.6" : undefined, port: EnvVars.PORT },
     (err) => {
       if (err) {
         fastify.log.error(err);

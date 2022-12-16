@@ -1,17 +1,15 @@
-// Require the framework and instantiate it
-const fastify = require("fastify")({ logger: true });
-
-const EnvVars = process.env;
-
-// Declare a route
-fastify.get("/", (request, reply) => {
-  reply.send({ hello: "world", app: "proxy-service" });
-});
+const { fastify, EnvVars, dev_env } = require("./src/init_server.js");
 
 // Run the server!
-fastify.listen({ port: EnvVars.PORT }, (err) => {
-  if (err) {
-    fastify.log.error(err);
-    process.exit(1);
+fastify.listen(
+  {
+    host: dev_env ? "127.25.0.2" : undefined,
+    port: EnvVars.PORT,
+  },
+  (err) => {
+    if (err) {
+      fastify.log.error(err);
+      process.exit(1);
+    }
   }
-});
+);

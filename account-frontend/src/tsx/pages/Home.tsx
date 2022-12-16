@@ -1,21 +1,57 @@
 // import crypto from "crypto";
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { Page, InputDiv } from "../subcomponents";
+
+type ev = React.ChangeEvent<HTMLInputElement>;
+
+class InputData {
+  e: ev;
+
+  val = function (): string {
+    this.e.preventDefault();
+    const v = this.e.target.value;
+    if (v.length <= 2) throw Error("input value too short");
+    return v;
+  };
+  update = (e: React.ChangeEvent<HTMLInputElement>) => {
+    this.e = e;
+  };
+}
 
 function SignIn(props: any) {
   const _signin_form = useRef();
-  const [_name, changeName] = useState({});
-  const [_password, changePassword] = useState({});
+  const _name = new InputData();
+  const _password = new InputData();
 
   async function handleSubmit() {
-    const state = { _name, _password };
+    const state = {
+      form: "sign in",
+      _name: _name.val(),
+      _password: _password.val(),
+    };
 
-    await fetch("http://127.25.0.1:8080", {
+    /*
+ const options = {
+      method: method,
+      headers:{'content-type': 'application/json'},
+      mode: 'no-cors'
+    };
+
+    options.body = JSON.stringify(body);
+
+    return fetch(url, options);
+*/
+
+    await fetch("/account/", {
       method: "POST",
+      headers: { "content-type": "application/json" },
+      mode: "no-cors",
       body: JSON.stringify(state),
-    }).then((response) => {
-      console.log(response);
-    });
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((e) => console.log(e));
   }
 
   return (
@@ -35,8 +71,7 @@ function SignIn(props: any) {
               type="text"
               defaultValue="Name"
               onChange={(e) => {
-                e.preventDefault();
-                changeName(e.target.value);
+                _name.update(e);
               }}
             />
           </InputDiv>
@@ -46,10 +81,7 @@ function SignIn(props: any) {
               id="password"
               type="password"
               defaultValue=""
-              onChange={(e) => {
-                e.preventDefault();
-                changePassword(e.target.value);
-              }}
+              onChange={(e) => _password.update(e)}
             />
           </InputDiv>
           <InputDiv className="p-1">

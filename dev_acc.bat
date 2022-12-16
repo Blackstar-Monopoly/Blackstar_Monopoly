@@ -1,8 +1,11 @@
-
+cd ./backend/accounts-service
+start npm run dev
+start code .
+cd ../..
 
 cd ./account-frontend
 start dev.bat
 start code .
 cd ..
 
-@REM docker compose up
+docker compose up

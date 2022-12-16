@@ -1,4 +1,4 @@
 apt-get update
-apt-get install nodejs
-apt-get install npm
-apt-get install nvm
+apt-get install -y curl
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash 
+apt-get install -y nodejs
